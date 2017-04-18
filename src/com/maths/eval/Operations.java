@@ -38,7 +38,7 @@ public class Operations {
         return new Operation<Double>() {
             @Override
             public void exec(Stack<Double> stack) {
-                stack.push(stack.pop() - stack.pop());
+                stack.push(- stack.pop() + stack.pop());
             }
 
             @Override
@@ -52,7 +52,7 @@ public class Operations {
         return new Operation<Double>() {
             @Override
             public void exec(Stack<Double> stack) {
-                stack.push(stack.pop() / stack.pop());
+                stack.push(1 / stack.pop() * stack.pop());
             }
 
             @Override
