@@ -23,8 +23,8 @@ public class Ten {
 
         Expression<Double> expression;
         double value;
-        int counter = 0;
-        int totalCounter = 0;
+        long counter = 0;
+        long totalCounter = 0;
         do {
             expression = genEx2();
             value = expression.evaluate().pop();
