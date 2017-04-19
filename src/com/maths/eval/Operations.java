@@ -62,6 +62,36 @@ public class Operations {
         };
     }
 
+    public static Operation<Double> dExp() {
+        return new Operation<Double>() {
+            @Override
+            public void exec(Stack<Double> stack) {
+                double b = stack.pop();
+                double a = stack.pop();
+                stack.push(Math.pow(a, b));
+            }
+
+            @Override
+            public String toString() {
+                return "^";
+            }
+        };
+    }
+
+    public static Operation<Double> dCat() {
+        return new Operation<Double>() {
+            @Override
+            public void exec(Stack<Double> stack) {
+                stack.push(stack.pop() + stack.pop() * 10);
+            }
+
+            @Override
+            public String toString() {
+                return "||";
+            }
+        };
+    }
+
     public static Operation<Double> dPush(final double value) {
         return new Operation<Double>() {
             @Override
