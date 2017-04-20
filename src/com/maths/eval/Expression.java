@@ -1,15 +1,16 @@
 package com.maths.eval;
 
+import java.util.ArrayList;
 import java.util.Stack;
 
 /**
  * Created by fchoi on 4/18/2017.
  */
 public class Expression<T> {
-    private Stack<Operation<T>> expression;
+    private ArrayList<Operation<T>> expression;
 
     public Expression () {
-        expression = new Stack<>();
+        expression = new ArrayList<>();
     }
 
     public void addOperation(Operation<T> operation) {
