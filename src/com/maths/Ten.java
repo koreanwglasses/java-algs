@@ -26,7 +26,7 @@ public class Ten {
         long counter = 0;
         long totalCounter = 0;
         do {
-            expression = genEx2();
+            expression = genExReversed();
             value = expression.evaluate().pop();
 
             counter++;
