@@ -14,19 +14,14 @@ public class Expression<T> {
     }
 
     public void addOperation(Operation<T> operation) {
-        expression.add(0, operation);
-    }
-
-    public Stack<Operation<T>> getExpressionStackCopy() {
-        return (Stack<Operation<T>>) expression.clone();
+        expression.add(operation);
     }
 
     public Stack<T> evaluate() {
-        Stack<Operation<T>> expressionStack = getExpressionStackCopy();
         Stack<T> stack = new Stack<>();
 
-        while(!expressionStack.empty()) {
-            expressionStack.pop().exec(stack);
+        for(int i = 0; i < expression.size(); i++){
+            expression.get(i).exec(stack);
         }
 
         return stack;
@@ -35,7 +30,7 @@ public class Expression<T> {
     @Override
     public String toString() {
         String result = "";
-        for(int i = expression.size() - 1; i >= 0; i--) {
+        for(int i = 0; i < expression.size(); i++) {
             result += expression.get(i).toString() + " ";
         }
         return result;
